@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login — Veganeered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- ── NAVBAR ── -->
+    <nav>
+        <div class="logo">Veganeered</div>
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+        </div>
+    </nav>
+
+    <!-- =============================================
+         LOGIN FORM
+         Admin enters username + password here
+         On success → redirected to dashboard.html
+         On failure → error message shown below form
+         ============================================= -->
+    <section class="login-section">
+
+        <div class="login-card">
+
+            <!-- Heading -->
+            <h1 class="login-title">Admin Login</h1>
+            <p class="login-sub">Enter your credentials to manage recipes.</p>
+
+            <!-- Error message box — hidden by default, shown on wrong credentials -->
+            <!-- JS toggles the 'hidden' class to show/hide this -->
+            <div class="login-error hidden" id="login-error">
+                Invalid username or password.
+            </div>
+
+            <!-- Login form -->
+            <!-- We use divs instead of a form tag to control submission ourselves -->
+            <div class="login-form">
+
+                <!-- Username field -->
+                <div class="form-group">
+                    <label class="form-label" for="username">Username</label>
+                    <input
+                        class="form-input"
+                        type="text"
+                        id="username"
+                        placeholder="Enter username"
+                    >
+                </div>
+
+                <!-- Password field -->
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <input
+                        class="form-input"
+                        type="password"
+                        id="password"
+                        placeholder="Enter password"
+                    >
+                </div>
+
+                <!-- Submit button -->
+                <button class="login-btn" id="login-btn" onclick="handleLogin()">
+                    Login
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="/js/admin.js"></script>
+</body>
+</html>
