@@ -1,0 +1,656 @@
+ 
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --bg:      #FAF7F0;
+    --text:    #1A1208;
+    --primary: #C8304A;
+    --muted:   #6B5E4A;
+  }
+
+  body {
+    background-color: var(--bg);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+  }
+  nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+    background-color: var(--bg);
+  }
+  .logo{
+    font-family: 'Playfair Display',serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  .nav-links{
+    display: flex;
+    gap: 16px;
+  }
+  .nav-links a{
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    text-transform : uppercase;
+    letter-spacing: 1px;
+    padding: 8px 18px;
+    border-radius:100px;
+    border:1.5px solid var(--text);
+
+  }
+
+  /* =============================================
+   HERO SECTION
+   Big amber banner — two column grid layout
+   Left: text | Right: image
+   ============================================= */
+
+.hero {
+  background-color: #D4831A;      /* amber/golden colour from the design */
+  padding: 80px 48px;             /* space inside the section */
+  display: grid;                  /* enables two column layout */
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 40px;                      /* space between text and image */
+  align-items: center;            /* vertically centers both columns */
+  min-height: 70vh;               /* takes up 70% of screen height */
+}
+
+/* Large bold uppercase title */
+.hero-title {
+  font-family: 'Playfair Display', serif; /* serif font for headings */
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--primary);          /* pink-red from :root variables */
+  line-height: 1.0;               /* tight line spacing for big text */
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Subtitle text below the heading */
+.hero-sub {
+  font-size: 15px;
+  color: white;
+  line-height: 1.7;               /* comfortable reading spacing */
+  margin-bottom: 32px;
+}
+
+/* Explore Now button */
+.hero-btn {
+  display: inline-block;          /* allows padding to work on an <a> tag */
+  text-decoration: none;          /* removes default underline from links */
+  background: white;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 100px;           /* makes it pill shaped */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Image placeholder — dashed box on the right side */
+/* Remove this and replace with img tag when photo is ready */
+.hero-image {
+  background: rgba(255,255,255,0.2);       /* semi transparent white */
+  border-radius: 8px;
+  border: 2px dashed rgba(255,255,255,0.4);
+  aspect-ratio: 4/3;                        /* keeps box proportional */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+}
+
+
+/* =============================================
+   CATEGORIES SECTION
+   Two equal cards side by side
+   ============================================= */
+
+.categories {
+  padding: 80px 48px;             /* breathing space around section */
+  background-color: var(--bg);    /* cream background */
+}
+
+/* Section heading above the cards */
+.categories-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* Grid that holds both cards side by side */
+.categories-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 32px;                      /* space between the two cards */
+}
+
+/* Individual category card */
+.cat-card {
+  background: white;
+  border-radius: 16px;            /* rounded corners */
+  padding: 32px;
+  text-align: center;
+}
+
+/* Image placeholder inside each card */
+/* Remove when real image is added */
+.cat-img-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;             /* wide rectangle shape */
+  background-color: #E8D8C0;      /* warm beige placeholder */
+  border-radius: 8px;
+  border: 2px dashed #C4A882;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: #A0856A;
+  font-size: 13px;
+}
+
+/* Category name — Vegan / Vegetarian */
+.cat-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);          /* pink-red accent */
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* Short description below the name */
+.cat-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* Explore button on each card */
+.cat-btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--primary); /* pink-red button */
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 100px;             /* pill shape */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* =============================================
+   FEATURED RECIPES SECTION
+   Three recipe cards displayed in a row
+   ============================================= */
+
+.featured {
+  padding: 80px 48px;
+  background-color: #F5F0E8;    /* slightly darker cream to separate sections */
+}
+
+/* Section heading */
+.featured-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* Grid holding the three cards */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* three equal columns */
+  gap: 28px;                              /* space between cards */
+}
+
+/* Individual recipe card */
+.recipe-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;             /* keeps image inside rounded corners */
+}
+
+/* Image placeholder inside card */
+/* Remove when real image is added */
+.recipe-img-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: #E8D8C0;
+  border: 2px dashed #C4A882;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #A0856A;
+  font-size: 13px;
+}
+
+/* Card body — padding around text content */
+.recipe-card-body {
+  padding: 24px;
+}
+
+/* Vegan / Vegetarian tag badge */
+.recipe-tag {
+  display: inline-block;
+  background-color: var(--primary);  /* pink-red background */
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+/* Recipe name */
+.recipe-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+/* Short description */
+.recipe-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Prep time, cook time, servings row */
+.recipe-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;              /* wraps to next line on small screens */
+  margin-bottom: 20px;
+}
+
+.recipe-meta span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* View Recipe button */
+.recipe-btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--primary);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+/* =============================================
+   FOOTER
+   Bottom bar with logo, links and contact
+   ============================================= */
+
+footer {
+  background-color: #1A1208;    /* dark brown — contrasts with cream */
+  padding: 48px;
+  display: flex;                /* puts all three parts in a row */
+  justify-content: space-between; /* spreads them across the full width */
+  align-items: center;
+}
+
+/* Veganeered logo text in footer */
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);        /* pink-red to match navbar logo */
+}
+
+/* Navigation links in footer */
+.footer-links {
+  display: flex;
+  gap: 24px;                    /* space between each link */
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 13px;
+  color: rgba(255,255,255,0.65); /* muted white */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s;       /* smooth colour change on hover */
+}
+
+.footer-links a:hover {
+  color: white;                 /* brightens on hover */
+}
+
+/* Contact info on the right */
+.footer-contact p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  text-align: right;
+  line-height: 1.8;
+}
+
+
+/* =============================================
+   ABOUT ME SECTION
+   Two column layout — photo left, text right
+   Sits above the footer on the homepage
+   ============================================= */
+
+.about {
+  padding: 80px 48px;
+  background-color: #1A1208;    /* dark brown — warm and rich */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 60px;
+  align-items: center;
+}
+
+/* Left side — author photo placeholder */
+.about-img-placeholder {
+  width: 100%;
+  aspect-ratio: 3/4;            /* portrait style — taller than wide */
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  border: 2px dashed rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 14px;
+}
+
+/* Small label above heading */
+.about-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--primary);        /* pink-red accent */
+  margin-bottom: 12px;
+}
+
+/* About Me heading */
+.about-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+/* Author bio text */
+.about-desc {
+  font-size: 15px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+/* Contact details */
+.about-contact {
+  margin-bottom: 32px;
+}
+
+.about-contact p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.9;
+}
+
+/* Read More button */
+.about-btn {
+  display: inline-block;
+  text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 12px 28px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+
+/* Loading / error message shown while API fetch is in progress */
+.loading-text {
+    text-align: center;
+    color: var(--muted);
+    font-size: 15px;
+    grid-column: 1 / -1;   /* spans all columns so it centers properly */
+    padding: 40px 0;
+}
+
+
+
+/* =============================================
+   RECIPE DETAIL PAGE
+   Full recipe view with hero image,
+   two column layout: main content + sidebar
+   ============================================= */
+
+/* Full width hero image at top of page */
+.detail-hero {
+    width: 100%;
+    max-height: 480px;
+    overflow: hidden;
+}
+
+.detail-hero-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;      /* crops image to fill without stretching */
+}
+
+/* Placeholder if no image uploaded yet */
+.detail-img-placeholder {
+    width: 100%;
+    height: 360px;
+    background-color: #E8D8C0;
+    border-bottom: 2px dashed #C4A882;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #A0856A;
+    font-size: 14px;
+}
+
+/* Two column layout — main content left, sidebar right */
+.detail-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 48px;
+    display: grid;
+    grid-template-columns: 1fr 340px;  /* main takes remaining space, sidebar is fixed */
+    gap: 60px;
+    align-items: start;                /* sidebar stays at top, doesn't stretch */
+}
+
+/* Recipe tag, title, description */
+.detail-header {
+    margin-bottom: 48px;
+}
+
+.detail-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 12px 0 16px;
+    line-height: 1.2;
+}
+
+.detail-desc {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 32px;
+}
+
+/* Prep / cook / servings boxes in a row */
+.detail-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+/* Each meta box — prep time, cook time, servings */
+.meta-box {
+    background: #F5F0E8;
+    border-radius: 12px;
+    padding: 16px 24px;
+    text-align: center;
+    min-width: 110px;
+    display: flex;
+    flex-direction: column;     /* stack label above value */
+    gap: 4px;
+}
+
+.meta-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+}
+
+.meta-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+/* Bookmark / print / share buttons row */
+.detail-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Each action button */
+.action-btn {
+    background: transparent;
+    border: 1.5px solid var(--text);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 100px;
+    cursor: pointer;            /* shows hand cursor on hover */
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background: var(--text);
+    color: white;
+}
+
+/* Bookmarked state — filled button */
+.action-btn.bookmarked {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+/* Section headings — "Instructions" and "Ingredients" */
+.detail-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E8D8C0;  /* subtle divider line */
+}
+
+/* Individual step — number circle + instruction text */
+.detail-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+/* Step number circle */
+.step-number {
+    background: var(--primary);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;         /* makes it a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;             /* prevents circle from squishing */
+}
+
+.detail-step p {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.8;
+    padding-top: 6px;           /* vertically aligns text with circle */
+}
+
+/* Ingredients sidebar */
+.detail-sidebar {
+    background: #F5F0E8;
+    border-radius: 16px;
+    padding: 32px;
+    position: sticky;           /* stays visible while scrolling steps */
+    top: 24px;
+}
+
+/* Ingredients list */
+.ingredients-list {
+    list-style: none;           /* remove default bullet points */
+}
+
+.ingredients-list li {
+    font-size: 15px;
+    color: var(--text);
+    padding: 10px 0;
+    border-bottom: 1px solid #E8D8C0;   /* subtle line between ingredients */
+    line-height: 1.5;
+}
+
+.ingredients-list li:last-child {
+    border-bottom: none;        /* no line after the last ingredient */
+}

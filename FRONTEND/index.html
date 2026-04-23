@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veganeered</title>
+
+    <!-- FONTS FROM GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+    <nav>
+        <div class="logo">Veganeered</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="recipes.html">Explore Now</a>
+        </div>
+    </nav>
+
+
+<!-- =============================================
+     HERO SECTION
+     The big amber banner at the top of the page
+     Layout: text on left, image placeholder on right
+     ============================================= -->
+<section class="hero">
+
+  <!-- Left side — headline, subtitle and CTA button -->
+  <div class="hero-text">
+
+    <!-- Main headline — large bold title from the design -->
+    <h1 class="hero-title">Savor Every<br>Bite Awaits You</h1>
+
+    <!-- Subtitle — short description below the title -->
+    <p class="hero-sub">
+      Discover a world of delicious recipes that cater
+      to every taste, whether vegan or vegetarian!
+    </p>
+
+    <!-- CTA button — links to the recipes page -->
+    <a href="recipes.html" class="hero-btn">Explore Now</a>
+
+  </div>
+
+  <!-- Right side — image placeholder until real photo is added -->
+  <!-- TO DO: replace this div with an <img> tag when photo is ready -->
+  <div class="hero-image">
+    <p>Image coming soon</p>
+  </div>
+
+</section>
+</section>
+
+<!-- =============================================
+     CATEGORIES SECTION
+     Two big cards — Vegan and Vegetarian
+     Each card links to its own recipes page
+     ============================================= -->
+<section class="categories">
+
+  <!-- Section heading -->
+  <h2 class="categories-title">What are you looking for?</h2>
+
+  <!-- Two category cards side by side -->
+  <div class="categories-grid">
+
+    <!-- Vegan category card -->
+    <div class="cat-card">
+      <!-- Image placeholder — replace with real image later -->
+      <div class="cat-img-placeholder">
+        <p>Image coming soon</p>
+      </div>
+      <h3 class="cat-name">Vegan</h3>
+      <p class="cat-desc">
+        Explore our collection of 100% plant based recipes
+        made with fresh ingredients and bold flavors.
+      </p>
+      <a href="vegan.html" class="cat-btn">Explore Vegan</a>
+    </div>
+
+    <!-- Vegetarian category card -->
+    <div class="cat-card">
+      <!-- Image placeholder — replace with real image later -->
+      <div class="cat-img-placeholder">
+        <p>Image coming soon</p>
+      </div>
+      <h3 class="cat-name">Vegetarian</h3>
+      <p class="cat-desc">
+        Discover delicious vegetarian recipes that are
+        nutritious, satisfying and easy to make.
+      </p>
+      <a href="vegetarian.html" class="cat-btn">Explore Vegetarian</a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =============================================
+     FEATURED RECIPES SECTION
+     Shows 3 recipe cards in a row
+     Later these will load dynamically from MongoDB
+     ============================================= -->
+
+     <section class="featured">
+  <h2 class="featured-title">Featured Recipes</h2>
+
+  <!-- 
+    id="featured-grid" is how main.js finds this element
+    The JS will clear this and inject real recipe cards 
+  -->
+  <div class="featured-grid" id="featured-grid">
+    <!-- Cards loaded dynamically by /js/main.js -->
+    <p class="loading-text">Loading recipes...</p>
+  </div>
+</section>
+
+
+<!-- =============================================
+     ABOUT ME SECTION
+     Shows the author behind the recipes
+     Sits above the footer on the homepage
+     ============================================= -->
+<section class="about">
+
+  <!-- Left side — author photo -->
+  <div class="about-img-placeholder">
+    <!-- TO DO: replace with real author photo -->
+    <!-- <img src="/images/author.jpg" alt="Author"> -->
+    <p>Your photo here</p>
+  </div>
+
+  <!-- Right side — author info -->
+  <div class="about-text">
+
+    <!-- Small label above heading -->
+    <span class="about-label">Meet the Chef</span>
+
+    <!-- Author name -->
+    <h2 class="about-heading">About Me</h2>
+
+    <!-- Author description -->
+    <!-- TO DO: replace with real author bio -->
+    <p class="about-desc">
+      Hi! I'm the person behind Veganeered. I believe that
+      plant based food should be exciting, flavourful and
+      accessible to everyone. Every recipe on this site is
+      made with love, fresh ingredients and a passion for
+      good food. Whether you are vegan, vegetarian or just
+      curious — there is something here for you!
+    </p>
+
+    <!-- Contact details -->
+    <div class="about-contact">
+      <p>📍 123 Anywhere St., Any City</p>
+      <p>📞 123-456-7890</p>
+      <p>✉️ hello@veganeered.com</p>
+    </div>
+
+    <!-- Link to full about page -->
+    <a href="about.html" class="about-btn">Read More</a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =============================================
+     FOOTER
+     Bottom of every page
+     Contains logo, navigation links and contact info
+     ============================================= -->
+<footer>
+
+  <!-- Logo -->
+  <div class="footer-logo">Veganeered</div>
+
+  <!-- Quick navigation links -->
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="vegan.html">Vegan</a>
+    <a href="vegetarian.html">Vegetarian</a>
+    <a href="about.html">About Me</a>
+  </div>
+
+  <!-- Contact details -->
+  <!-- TO DO: replace with client's real contact info -->
+  <div class="footer-contact">
+    <p>hello@veganeered.com</p>
+    <p>123-456-7890</p>
+  </div>
+
+</footer>
+<script src="/js/main.js"></script>
+</body>
+</html>

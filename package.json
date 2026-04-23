@@ -1,0 +1,33 @@
+{
+  "name": "recipe_web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node BACKEND/server.js",
+    "dev": "nodemon BACKEND/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bharvigangwar/recipe-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bharvigangwar/recipe-web/issues"
+  },
+  "homepage": "https://github.com/bharvigangwar/recipe-web#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^4.22.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
