@@ -654,3 +654,285 @@ footer {
 .ingredients-list li:last-child {
     border-bottom: none;        /* no line after the last ingredient */
 }
+
+
+/* =============================================
+   LOGIN PAGE
+   Centered card with username + password fields
+   ============================================= */
+
+.login-section {
+    min-height: calc(100vh - 80px);   /* fills the screen below the navbar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    background-color: var(--bg);
+}
+
+/* White card containing the form */
+.login-card {
+    background: white;
+    border-radius: 20px;
+    padding: 48px;
+    width: 100%;
+    max-width: 420px;                 /* not too wide */
+    box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+}
+
+.login-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.login-sub {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 32px;
+}
+
+/* Red error box shown on wrong credentials */
+.login-error {
+    background: #FEE2E2;
+    border: 1px solid #FCA5A5;
+    color: #DC2626;
+    font-size: 13px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Login form container */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Full width login button */
+.login-btn {
+    width: 100%;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.2s;
+}
+
+.login-btn:hover   { opacity: 0.9; }
+.login-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+
+/* =============================================
+   SHARED FORM ELEMENTS
+   Used on both login and admin dashboard
+   ============================================= */
+
+/* Label + input stacked vertically */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Small hint text next to label */
+.form-hint {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--muted);
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: 8px;
+}
+
+/* All text inputs and selects */
+.form-input {
+    padding: 12px 16px;
+    border: 1.5px solid #E0D8CC;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: white;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary);   /* pink-red border when focused */
+}
+
+/* Textarea — taller version of form-input */
+.form-textarea {
+    resize: vertical;               /* user can resize vertically only */
+    min-height: 100px;
+    line-height: 1.6;
+}
+
+/* Checkbox row — inline instead of stacked */
+.form-check {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Success / error message below the form */
+.form-message {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.form-message.success {
+    background: #D1FAE5;
+    color: #065F46;
+    border: 1px solid #6EE7B7;
+}
+
+.form-message.error {
+    background: #FEE2E2;
+    color: #DC2626;
+    border: 1px solid #FCA5A5;
+}
+
+
+/* =============================================
+   ADMIN DASHBOARD
+   Two panel side by side layout
+   Left: recipe list | Right: add/edit form
+   ============================================= */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* two equal panels */
+    gap: 0;
+    min-height: calc(100vh - 80px);
+}
+
+/* Each panel */
+.dashboard-panel {
+    padding: 40px;
+    overflow-y: auto;                 /* scroll if content is long */
+}
+
+/* Left panel has slightly different background to separate visually */
+.dashboard-panel:first-child {
+    background: #F5F0E8;
+    border-right: 1px solid #E0D8CC;
+}
+
+.dashboard-panel:last-child {
+    background: white;
+}
+
+/* Panel heading row — title + Add New button side by side */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.panel-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 24px;
+}
+
+/* Admin form — stacked fields */
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Three fields in a row — prep, cook, servings */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+/* Individual recipe row in the left panel */
+.recipe-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #E0D8CC;
+}
+
+.recipe-row-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.recipe-row-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.recipe-row-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Edit and Delete buttons on each row */
+.row-btn {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.edit-btn {
+    background: var(--text);
+    color: white;
+}
+
+.delete-btn {
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+.delete-btn:hover {
+    background: #DC2626;
+    color: white;
+}
+
+/* Utility — hides elements (toggled by JS) */
+.hidden {
+    display: none !important;
+}

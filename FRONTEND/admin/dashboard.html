@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Veganeered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- ── ADMIN NAVBAR ── -->
+    <nav>
+        <div class="logo">Veganeered Admin</div>
+        <div class="nav-links">
+            <a href="/index.html">View Site</a>
+            <!-- Logout clears the token from localStorage -->
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+    </nav>
+
+    <!-- =============================================
+         DASHBOARD LAYOUT
+         Left: recipe table | Right: add/edit form
+         ============================================= -->
+    <div class="dashboard">
+
+        <!-- ── LEFT PANEL — Recipe List ── -->
+        <div class="dashboard-panel">
+
+            <div class="panel-header">
+                <h2 class="panel-title">All Recipes</h2>
+                <!-- Clicking this resets the form on the right to "Add" mode -->
+                <button class="recipe-btn" onclick="resetForm()">+ Add New</button>
+            </div>
+
+            <!-- Recipe rows injected here by admin.js -->
+            <!-- Each row has recipe name, category, edit and delete buttons -->
+            <div id="recipe-list">
+                <p class="loading-text">Loading recipes...</p>
+            </div>
+
+        </div>
+
+        <!-- ── RIGHT PANEL — Add / Edit Form ── -->
+        <div class="dashboard-panel">
+
+            <!-- Title changes between "Add Recipe" and "Edit Recipe" -->
+            <h2 class="panel-title" id="form-title">Add Recipe</h2>
+
+            <!-- Hidden input stores the ID when editing an existing recipe -->
+            <!-- Empty means we are in "add" mode -->
+            <input type="hidden" id="edit-id" value="">
+
+            <div class="admin-form">
+
+                <!-- Recipe Title -->
+                <div class="form-group">
+                    <label class="form-label">Title</label>
+                    <input class="form-input" type="text" id="f-title" placeholder="e.g. Creamy Tomato Pasta">
+                </div>
+
+                <!-- Category dropdown — only vegan or vegetarian allowed -->
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <select class="form-input" id="f-category">
+                        <option value="vegan">Vegan</option>
+                        <option value="vegetarian">Vegetarian</option>
+                    </select>
+                </div>
+
+                <!-- Description -->
+                <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-input form-textarea" id="f-description" placeholder="Short description of the recipe..."></textarea>
+                </div>
+
+                <!-- Prep time / Cook time / Servings in a row -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Prep Time (mins)</label>
+                        <input class="form-input" type="number" id="f-prepTime" placeholder="10">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Cook Time (mins)</label>
+                        <input class="form-input" type="number" id="f-cookTime" placeholder="20">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Servings</label>
+                        <input class="form-input" type="number" id="f-servings" placeholder="4">
+                    </div>
+                </div>
+
+                <!-- Image URL -->
+                <div class="form-group">
+                    <label class="form-label">Image URL</label>
+                    <input class="form-input" type="text" id="f-image" placeholder="https://...">
+                </div>
+
+                <!-- Featured toggle -->
+                <div class="form-group form-check">
+                    <input type="checkbox" id="f-featured">
+                    <label class="form-label" for="f-featured">
+                        Show on home page (Featured)
+                    </label>
+                </div>
+
+                <!-- Ingredients
+                     Each line = one ingredient
+                     Format: "400g | pasta"  (amount | name)
+                     JS splits this by | to build the ingredients array -->
+                <div class="form-group">
+                    <label class="form-label">
+                        Ingredients
+                        <span class="form-hint">One per line — format: amount | name</span>
+                    </label>
+                    <textarea
+                        class="form-input form-textarea"
+                        id="f-ingredients"
+                        placeholder="400g | pasta&#10;2 cups | tomato sauce&#10;1 cup | heavy cream"
+                        rows="6"
+                    ></textarea>
+                </div>
+
+                <!-- Steps
+                     Each line = one step instruction
+                     JS automatically numbers them -->
+                <div class="form-group">
+                    <label class="form-label">
+                        Steps
+                        <span class="form-hint">One step per line — numbered automatically</span>
+                    </label>
+                    <textarea
+                        class="form-input form-textarea"
+                        id="f-steps"
+                        placeholder="Boil salted water and cook pasta.&#10;Heat olive oil in a pan.&#10;Add garlic and sauté."
+                        rows="6"
+                    ></textarea>
+                </div>
+
+                <!-- Error / success message shown after submit -->
+                <div class="form-message hidden" id="form-message"></div>
+
+                <!-- Submit button — label changes between Add and Update -->
+                <button class="login-btn" id="submit-btn" onclick="submitRecipe()">
+                    Add Recipe
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/js/admin.js"></script>
+</body>
+</html>
