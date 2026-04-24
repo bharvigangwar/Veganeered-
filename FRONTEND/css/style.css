@@ -936,3 +936,100 @@ footer {
 .hidden {
     display: none !important;
 }
+
+
+/* =============================================
+   PAGE HEADER
+   Used on recipes, about, and other inner pages
+   Simple centered title + subtitle
+   ============================================= */
+
+.page-header {
+    padding: 60px 48px 40px;
+    text-align: center;
+    background-color: var(--bg);
+}
+
+.page-header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.page-header-sub {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+
+/* =============================================
+   FILTER BAR
+   Two rows of filter buttons
+   Category row + prep time row
+   ============================================= */
+
+.filters {
+    padding: 0 48px 40px;
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;   /* stack the two filter rows vertically */
+    gap: 16px;
+}
+
+/* Each row — label + buttons side by side */
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;          /* wraps on smaller screens */
+}
+
+/* "Category:" and "Prep Time:" labels */
+.filter-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 100px;         /* keeps buttons aligned across both rows */
+}
+
+/* Individual filter button */
+.filter-btn {
+    background: transparent;
+    border: 1.5px solid #D0C4B0;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Active/selected filter button */
+.filter-btn.active {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+
+/* =============================================
+   RECIPES PAGE SECTION
+   Wraps the grid on the browse page
+   ============================================= */
+
+.recipes-page-section {
+    padding: 0 48px 80px;
+    background-color: var(--bg);
+}

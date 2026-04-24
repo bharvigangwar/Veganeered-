@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes — Veganeered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- ── NAVBAR ── -->
+    <nav>
+        <div class="logo">Veganeered</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="recipes.html">Explore Now</a>
+        </div>
+    </nav>
+
+    <!-- =============================================
+         PAGE HEADER
+         Title + subtitle at the top of the page
+         ============================================= -->
+    <section class="page-header">
+        <h1 class="page-header-title">All Recipes</h1>
+        <p class="page-header-sub">
+            Browse our full collection of vegan and vegetarian recipes.
+        </p>
+    </section>
+
+    <!-- =============================================
+         FILTER BAR
+         Category buttons + prep time buttons
+         Clicking these filters the recipe grid below
+         ============================================= -->
+    <section class="filters">
+
+        <!-- Category filter — All / Vegan / Vegetarian -->
+        <div class="filter-group">
+            <span class="filter-label">Category:</span>
+
+            <!-- data-category is read by recipes.js to know which filter to apply -->
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="vegan">Vegan</button>
+            <button class="filter-btn" data-category="vegetarian">Vegetarian</button>
+        </div>
+
+        <!-- Prep time filter -->
+        <div class="filter-group">
+            <span class="filter-label">Prep Time:</span>
+
+            <!-- data-prep value is the max minutes — passed to the API -->
+            <button class="filter-btn active" data-prep="all">Any</button>
+            <button class="filter-btn" data-prep="15">Under 15 mins</button>
+            <button class="filter-btn" data-prep="30">Under 30 mins</button>
+            <button class="filter-btn" data-prep="60">Under 60 mins</button>
+        </div>
+
+    </section>
+
+    <!-- =============================================
+         RECIPES GRID
+         Cards are injected here by recipes.js
+         id="recipes-grid" is how JS finds this element
+         ============================================= -->
+    <section class="recipes-page-section">
+        <div class="featured-grid" id="recipes-grid">
+            <p class="loading-text">Loading recipes...</p>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <div class="footer-logo">Veganeered</div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="recipes.html">Vegan</a>
+            <a href="recipes.html">Vegetarian</a>
+            <a href="about.html">About Me</a>
+        </div>
+        <div class="footer-contact">
+            <p>hello@veganeered.com</p>
+            <p>123-456-7890</p>
+        </div>
+    </footer>
+
+    <script src="/js/recipes.js"></script>
+</body>
+</html>
