@@ -972,7 +972,7 @@ footer {
    ============================================= */
 
 .filters {
-    padding: 0 48px 40px;
+    padding: 24px 48px 40px;
     background-color: var(--bg);
     display: flex;
     flex-direction: column;   /* stack the two filter rows vertically */
@@ -1032,4 +1032,68 @@ footer {
 .recipes-page-section {
     padding: 0 48px 80px;
     background-color: var(--bg);
+}
+
+
+/* =============================================
+   SEARCH BAR
+   Full width search on recipes page
+   ============================================= */
+
+.search-section {
+    padding: 40px 48px 24px;
+    background-color: var(--bg);
+}
+
+/* Search input wrapper — positions icon inside input */
+.search-wrapper {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Search icon inside the input */
+.search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;   /* click passes through to input */
+}
+
+/* The actual search input */
+.search-input {
+    width: 100%;
+    padding: 16px 48px 16px 48px;  /* space for icon left, clear btn right */
+    border: 1.5px solid #E0D8CC;
+    border-radius: 100px;           /* pill shape */
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: white;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Clear button — shown when user has typed something */
+.search-clear {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 4px;
+}
+
+.search-clear:hover {
+    color: var(--primary);
 }

@@ -31,6 +31,26 @@
         </p>
     </section>
 
+
+    <!-- =============================================
+     SEARCH BAR
+     Filters recipes in real time as user types
+     No API call needed — filters already loaded cards
+     ============================================= -->
+<section class="search-section">
+    <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Search recipes..."
+        >
+        <!-- Clear button — appears when user types -->
+        <button class="search-clear hidden" id="search-clear" onclick="clearSearch()">✕</button>
+    </div>
+</section>
+
     <!-- =============================================
          FILTER BAR
          Category buttons + prep time buttons
